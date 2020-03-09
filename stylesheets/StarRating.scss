@@ -1,0 +1,27 @@
+
+@import "globals";
+
+div.star-rating {
+  display: inline-block;
+  
+  div.star {
+    cursor: pointer;
+    height: 25px;
+    width: 25px;
+    margin: 2px;
+    float: left;
+    background-color: darken($light-grey, 40%);
+    clip-path: polygon(50% 0%, 63% 38%, 100% 38%, 69% 59%, 82% 100%, 50% 75%, 18% 100%, 31% 59%, 0% 38%, 37% 38%);
+
+    &.selected {
+      background-color: $yellow;
+    }
+  }
+
+  p {
+    margin-block-start: 0em;
+    margin-block-end: 0.5em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+  }
+}

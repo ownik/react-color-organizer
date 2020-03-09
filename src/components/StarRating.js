@@ -1,6 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import Star from "./Star.js";
+import "../../stylesheets/StarRating.scss";
 
 const StarRating = ({
   starsSelected = 0,
@@ -9,17 +10,15 @@ const StarRating = ({
   onMouseLeave = f => f,
   onRate = f => f
 }) => (
-  <div>
-    <div className="star-rating" onMouseLeave={onMouseLeave}>
-      {[...Array(totalStars)].map((n, i) => (
-        <Star
-          key={i}
-          selected={i < starsSelected}
-          onClick={() => onRate(i + 1)}
-          onMouseEnter={() => onMouseEnter(i + 1)}
-        />
-      ))}
-    </div>
+  <div className="star-rating" onMouseLeave={onMouseLeave}>
+    {[...Array(totalStars)].map((n, i) => (
+      <Star
+        key={i}
+        selected={i < starsSelected}
+        onClick={() => onRate(i + 1)}
+        onMouseEnter={() => onMouseEnter(i + 1)}
+      />
+    ))}
     <p>
       {starsSelected} of {totalStars} stars
     </p>
